@@ -1,0 +1,11 @@
+/* Butun ilovani qamrab oluvchi asosiy quti */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ekranning eng kamida 100% balandligini egallaydi */
+}
+
+/* O'rtadagi asosiy ma'lumotlar qismi */
+.main-content {
+  flex: 1; /* Header va Footerdan ortib qolgan barcha bo'sh joyni o'ziga oladi */
+}

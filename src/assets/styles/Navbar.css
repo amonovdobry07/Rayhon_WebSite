@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+/* ==========================================
+   UMUMIY STILLAR
+   ========================================== */
+.main-nav {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #eaeaea;
+
+  /* MUAMMONI HAL QILUVCHI QATORLAR: */
+  position: relative; /* z-index ishlashi uchun position kerak */
+  z-index: 99999; /* Butun Navbar'ni barcha AOS elementlardan ustun qiladi */
+}
+
+/* Logo joylashgan umumiy quti */
+.logo-box {
+  display: flex;
+  align-items: center; /* Rasmni vertikal o'rtaga tekislaydi */
+  justify-content: center; /* Agarda quti keng bo'lsa, gorizontal o'rtaga oladi */
+}
+
+/* Link tegi (rasmning otasi) */
+.logo {
+  display: flex;
+  display: block; /* Yoki flex, ichidagi rasmga qarab */
+  text-decoration: none;
+  /* Agar havola atrofida biroz joy kerak bo'lsa, padding berish mumkin: */
+  /* padding: 5px 0; */
+}
+
+/* Aynan rasmning o'ziga beriladigan stillar */
+.logo img {
+  /* IDEAL O'LCHAMLAR: Navbar balandligiga qarab 30px dan 50px gacha yaxshi tushadi */
+  height: 70px; /* Rasmni balandligini chegaralaymiz. Bu eng muhimi! */
+  
+  width: auto;  /* Enini avtomatik qilamiz, shunda rasm siqilib yoki cho'zilib ketmaydi (proporsiya saqlanadi) */
+  
+  display: block; /* Rasm tagidagi keraksiz bo'shliqni yo'qotadi */
+  
+  /* Agar rasm juda chekkaga yopishib qolsa, chetidan joy tashlash mumkin: */
+  /* margin-right: 15px; */
+}
+
+/* Mobile xolati uchun (agar kerak bo'lsa yanada kichikroq qilish) */
+@media screen and (max-width: 768px) {
+  .logo img {
+    height: 30px; /* Telefonda biroz kichikroq ko'rinishi uchun */
+  }
+}
+
+.change_lang select {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* NavLink uchun active class (Siz xohlagan qism) */
+.nav-links a.active, 
+.mobile-links a.active {
+  color: #888; /* Aktiv bo'lganda rangi o'zgaradi */
+  font-weight: bold;
+}
+
+
+/* ==========================================
+   DESKTOP XOLATI
+   ========================================== */
+/* ==========================================
+   DESKTOP XOLATI (YANGILANGAN, NAFIS DIZAYN)
+   ========================================== */
+/* ==========================================
+   DESKTOP XOLATI (Logotip chapda, menyu o'rtada)
+   ========================================== */
+.desktop-navbar {
+  display: flex;
+  flex-direction: row; /* Elementlarni bir qatorga teramiz */
+  justify-content: space-between; /* Elementlarni chap, o'rta va o'ngga yoyamiz */
+  align-items: center; /* Vertikal o'rtaga tekislaymiz */
+  padding: 20px 50px; /* Tepa/pastdan 20px, yonlardan 50px joy */
+}
+
+
+
+/* Menyular qutisi (Markazda turadi) */
+.desktop-navbar .nav-links {
+  flex: 2; /* O'rtada ko'proq joy olishi uchun */
+  display: flex;
+  justify-content: center;
+}
+
+.desktop-navbar .nav-links ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 45px;
+}
+
+.desktop-navbar .nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Poiret One", sans-serif;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+/* Hover qilinganda o'rtadan chiziq chiqish effekti */
+.desktop-navbar .nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
+  background-color: #222;
+  transition: width 0.3s ease, transform 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.desktop-navbar .nav-links a:hover,
+.desktop-navbar .nav-links a.active {
+  color: #000;
+}
+
+.desktop-navbar .nav-links a:hover::after,
+.desktop-navbar .nav-links a.active::after {
+  width: 100%;
+}
+
+/* Til o'zgartirgich (O'ng tomonga taqaladi) */
+.desktop-navbar .change_lang {
+  flex: 1; /* Qatorning 1 qismini egallaydi */
+  display: flex;
+  justify-content: flex-end; /* O'ng tomonga surish */
+  position: relative; /* Oldingi absolute o'chirildi, endi o'z o'rnida turadi */
+  right: auto;
+  bottom: auto;
+}
+/* Katta ekranda Mobile Navbar umuman ko'rinmaydi */
+.mobile-navbar {
+  display: none;
+}
+
+
+/* ==========================================
+   MOBILE XOLATI (max-width: 768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
+  
+  /* Telefonda Desktop Navbar umuman ko'rinmaydi */
+  .desktop-navbar {
+    display: none;
+  }
+
+  /* Telefonda Mobile Navbar ko'rinadi */
+  .mobile-navbar {
+    display: block;
+    width: 100%;
+  }
+
+  /* Tepadagi logotip, til va hamburger qatori */
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  .mobile-header .logo {
+    font-size: 24px;
+  }
+
+  .mobile-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Hamburger tugmasi */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger .bar {
+    width: 25px;
+    height: 2px;
+    background-color: #333;
+  }
+
+  /* Butun ekranni egallovchi oq menyu qutisi (Overlay) */
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Hamma narsani ustida turishi uchun */
+    
+    /* Sekin ochilib yopilish animatsiyasi */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.05); /* Bir oz kattalashib ochilishi uchun effekt */
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* State o'zgarib open class qo'shilganda: */
+  .mobile-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  /* Yopish (X) tugmasi */
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: 300;
+    cursor: pointer;
+    color: #333;
+    padding: 10px;
+  }
+
+  /* Menyular ro'yxati */
+  .mobile-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px; /* Rasmdagidek keng ochiq masofa */
+  }
+
+  .mobile-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px; /* Rasmdagidek yirik yozuvlar */
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+}
+
+
+/* ==========================================
+   CUSTOM LANGUAGE DROPDOWN ("VAUU" EFFEKTLAR)
+   ========================================== */
+.custom-lang-dropdown {
+  position: relative;
+  font-family: inherit;
+  user-select: none;
+}
+
+/* Tanlangan til ko'rinib turadigan quti */
+.selected-lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.selected-lang:hover {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+/* Kichkina strelka animatsiyasi */
+.chevron {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+.chevron.rotate {
+  transform: rotate(180deg);
+}
+
+/* Ochiladigan menyu ro'yxati */
+.lang-options {
+  position: absolute;
+  top: 120%; /* Paskaroqdan chiqishi uchun */
+  right: 0;
+  background-color: #ffffff;
+  min-width: 80px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  
+  /* Animatsiya sirlari */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Sakrash (bounce) effekti */
+  z-index: 1000;
+}
+
+.lang-options.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Menyudagi har bir til tugmasi */
+.lang-options li {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-align: center;
+}
+
+.lang-options li:hover {
+  background-color: #f0f4f8;
+  color: #000;
+}
+
+/* Aktiv (tanlangan) til rangi */
+.lang-options li.active {
+  color: #007bff; /* Yoki saytingiz asosiy rangi */
+  font-weight: bold;
+  background-color: #e6f2ff;
+}
+
+/* Mobile uchun moslashuv */
+@media screen and (max-width: 768px) {
+  .lang-options {
+    right: -10px; /* Telefonda chetga chiqib ketmasligi uchun */
+  }
+}
+
+
+
+/* 1. Animatsiyalarni aniqlaymiz */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 2. Asosiy Navbar konteyneriga animatsiya berish */
+.main-nav {
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+/* 3. Logo va Til almashtirgichga alohida effekt */
+.logo-box, .change_lang {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* 4. Havolalar (links) birin-ketin chiqishi uchun (Professional effekt) */
+.nav-links ul li {
+  opacity: 0; /* Boshida ko'rinmas bo'ladi */
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+/* Har bir havolaga alohida kechikish vaqti beramiz */
+.nav-links ul li:nth-child(1) { animation-delay: 0.2s; }
+.nav-links ul li:nth-child(2) { animation-delay: 0.3s; }
+.nav-links ul li:nth-child(3) { animation-delay: 0.4s; }
+.nav-links ul li:nth-child(4) { animation-delay: 0.5s; }
+.nav-links ul li:nth-child(5) { animation-delay: 0.6s; }
+
+/* Mobil menyu ochilganda overlay animatsiyasi */
+.mobile-overlay.open {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.mobile-links li {
+  animation: slideDown 0.4s ease-out forwards;
+}

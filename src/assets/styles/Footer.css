@@ -1,0 +1,148 @@
+/* 1. Kirish animatsiyasi - Pastdan tepaga silliq chiqish */
+@keyframes footerReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Chiziqning chapdan o'ngga chizilishi */
+@keyframes lineDraw {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.custom-footer {
+  background-color: #ffffff; /* Oq va toza fon */
+  padding: 80px 40px 40px;
+  border-top: 1px solid #eee;
+  animation: footerReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+  position: relative;
+}
+
+/* Footer tepasidagi nafis chiziq */
+.custom-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #2d3436, transparent);
+  animation: lineDraw 2s ease-in-out forwards;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Brend nomi animatsiyasi */
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.brand-description {
+  max-width: 400px;
+  color: #666;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* Havolalar uchun "Floating" underline effekti */
+.footer-links-column li {
+  margin-bottom: 12px;
+  list-style: none;
+}
+
+.footer-links-column a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  position: relative;
+  transition: color 0.3s ease;
+  font-weight: 700;
+}
+
+.footer-links-column a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #1a1a1a;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-links-column a:hover::after {
+  width: 100%;
+}
+
+/* Ijtimoiy tarmoqlar uchun doiraviy effekt */
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: all 0.4s ease;
+}
+
+.social-icon:hover {
+  background-color: #2d3436;
+  color: #fff;
+  transform: translateY(-5px);
+  border-color: #2d3436;
+}
+
+/* Footer Bottom qismi */
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.made-with-text a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Mobil moslashuvchanlik */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}

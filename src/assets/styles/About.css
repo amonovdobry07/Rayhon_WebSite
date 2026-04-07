@@ -1,0 +1,270 @@
+/* Google Fonts import - Serif va Sans-serif */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-white: #ffffff;
+  --bg-light: #f9fafb;
+  --text-main: #1f2937; /* To'q kulrang */
+  --text-light: #6b7280; /* Och kulrang */
+  --text-gold: #c6934c; /* Tilla/jigarrang */
+  --btn-bg: #806040; /* CTA tugmasi */
+  --ticker-bg: #f9fafb;
+  --video-bg: #e5e7eb;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+.about-rayxon-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  background-color: var(--bg-white);
+  color: var(--text-main);
+}
+
+
+
+.lang-picker {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  color: var(--text-gold);
+  font-size: 0.8rem;
+}
+
+/* 2. Hero About Section */
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 80px 40px;
+  align-items: center;
+  background-color: var(--bg-light);
+}
+
+.text-side {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.header-label {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-gold);
+  margin: 0;
+}
+
+.main-title {
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-main);
+  margin: 0 0 20px 0;
+}
+
+.about-content p {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  margin: 0 0 25px 0;
+  font-weight: 300;
+}
+
+.brand-desc {
+  color: var(--text-main);
+  font-weight: 400;
+}
+
+.book-now-btn {
+  width: fit-content;
+  padding: 18px 45px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  background-color: var(--btn-bg);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.book-now-btn:hover {
+  background-color: #6d4f34;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.video-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: var(--video-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.about-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Video UI Overlay (image_7.png dagi silliq ko'rinish) */
+.video-ui-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-container:hover .video-ui-overlay {
+  opacity: 1;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.progress-bar {
+  width: 40%; /* Placeholder progress */
+  height: 100%;
+  background-color: var(--text-gold);
+  border-radius: 2px;
+}
+
+.controls-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.video-ui-overlay button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.video-ui-overlay button:hover {
+  color: var(--text-gold);
+}
+
+.video-time {
+  margin-left: auto;
+}
+
+/* 3. Service Ticker Section */
+.service-ticker {
+  padding: 30px 40px;
+  background-color: var(--ticker-bg);
+  border-top: 1px solid #f3f4f6;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.ticker-label {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ticker-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-light);
+  white-space: nowrap;
+  animation: ticker-scroll 25s linear infinite;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ticker-dot {
+  color: var(--text-gold);
+  font-size: 1.2rem;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 5. Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .rayxon-header { padding: 15px 20px; }
+  .logo-text { font-size: 1.5rem; }
+  .nav-links { display: none; } /* Mobil menyu mantiqi kerak */
+  .lang-picker { font-size: 0.75rem; }
+
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .main-title { font-size: 2.5rem; }
+  .text-side { align-items: center; }
+  .about-content p { font-size: 1rem; }
+  .book-now-btn { padding: 15px 35px; }
+
+  .service-ticker { padding: 20px; flex-direction: column; text-align: center; gap: 10px; }
+  .ticker-content { font-size: 0.85rem; }
+  .ticker-label { font-size: 0.85rem; }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 10px;
+  }
+  .footer-brand { font-size: 1.5rem; }
+}

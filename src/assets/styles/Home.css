@@ -1,0 +1,185 @@
+/* Google Fonts import - Serif va Sans-serif */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400&display=swap");
+
+:root {
+  --bg-color: #f8f9fa;
+  --text-dark: #2d2d2d;
+  --text-light: #555555;
+  --accent-color: #8c96a3; /* Muted blue-grey */
+  --serif-font: "Playfair Display", serif;
+  --sans-font: "Inter", sans-serif;
+}
+
+.portfolio-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 80px;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+}
+
+/* Intro Section */
+.intro-section {
+  margin-bottom: 80px;
+}
+
+.intro-text {
+  font-family: var(--serif-font);
+  font-size: 2.8rem;
+  line-height: 1.3;
+  font-weight: 400;
+  max-width: 900px;
+  color: var(--text-dark);
+}
+
+/* Image Grid */
+.image-grid {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 100px;
+}
+
+.grid-item {
+  flex: 1;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.about-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.text-wrapper p {
+  font-family: var(--sans-font);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  margin-bottom: 25px;
+}
+
+/* Button Style */
+.book-now-btn {
+  width: fit-content;
+  padding: 14px 45px;
+  font-family: var(--sans-font);
+  font-size: 0.9rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.book-now-btn:hover {
+  background-color: #7a8591;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .portfolio-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 20px;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+  }
+
+  .intro-text {
+    font-size: 1.8rem;
+  }
+
+  .image-grid,
+  .about-section {
+    flex-direction: column;
+  }
+
+  .about-image img {
+    height: 400px;
+  }
+
+  .grid-item img {
+    height: 300px;
+  }
+}
+
+
+/* Maxsulotlar sektsiyasi uchun umumiy stillar */
+/* Maxsulotlar sektsiyasi uchun umumiy stillar */
+.products-section {
+  padding: 50px 0;
+  width: 100%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Swiper konteyneri */
+.productSwiper {
+  width: 100%;
+  /* Soya (shadow) qirqilib qolmasligi uchun ikki yonga va pastga joy tashlaymiz */
+  padding: 10px 10px 40px 10px !important; 
+}
+
+/* Har bir rasm konteyneri (kartochka) */
+.product-slide {
+  height: 380px; /* Barcha rasmlarning balandligi bir xil bo'ladi */
+  border-radius: 15px; /* Burchaklarni yumaloq qilish */
+  overflow: hidden; /* Rasm ramkadan chiqib ketmasligi uchun */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Chiroyli, yengil soya */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animatsiyasi uchun */
+  cursor: grab; /* Sichqoncha ko'rinishini o'zgartirish */
+}
+
+/* Slayd ustiga borganda biroz ko'tarilib, soyasi kattalashadi */
+.product-slide:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-slide:active {
+  cursor: grabbing;
+}
+
+/* Rasmlarni o'zini barchasini bir xil qilib kesish va moslashtirish */
+.product-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Turli formatdagi rasmlarni bo'sh joy qoldirmasdan to'ldiradi */
+  object-position: center; /* Rasmning o'rtasini fokusga oladi */
+}
