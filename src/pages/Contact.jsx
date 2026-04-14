@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next'; // Tarjima uchun hook
 import '../assets/styles/Contact.css';
 
 const Contact = () => {
+  const { t } = useTranslation(); // t funksiyasini chaqiramiz
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -13,8 +15,8 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     
-    // Telefon raqami uchun 12 ta belgi limiti
-    if (name === 'phone' && value.length > 12) return;
+    // Telefon raqami uchun 13 ta belgi limiti (+998901234567 formatida)
+    if (name === 'phone' && value.length > 13) return; 
     
     setFormData({ ...formData, [name]: value });
   };
@@ -22,18 +24,17 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const targetEmail = "rayxon.tailor@example.com"; // Xat boradigan email
-    const subject = encodeURIComponent("Yangi bog'lanish xabari: " + formData.firstName);
+    const targetEmail = "raykhon.textile@gmail.com"; 
+    // Email mavzusi va tanasini ham tarjimaga moslaymiz
+    const subject = encodeURIComponent(t("contact_email_subject") + formData.firstName);
     
-    // Email tanasi (body) formatlash
     const body = encodeURIComponent(
-      `Ism: ${formData.firstName} ${formData.lastName}\n` +
-      `Telefon: ${formData.phone}\n` +
-      `Email: ${formData.email}\n\n` +
-      `Xabar:\n${formData.message}`
+      `${t("contact_form_name")}: ${formData.firstName} ${formData.lastName}\n` +
+      `${t("contact_form_phone")}: ${formData.phone}\n` +
+      `${t("contact_form_email")}: ${formData.email}\n\n` +
+      `${t("contact_form_message_body")}:\n${formData.message}`
     );
 
-    // Gmail havolasini ochish
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${subject}&body=${body}`;
     window.open(gmailUrl, '_blank');
   };
@@ -44,26 +45,23 @@ const Contact = () => {
         
         {/* Chap qism: Ma'lumotlar */}
         <div className="contact-info" data-aos="fade-right">
-          <h2 className="contact-title">Do'konlarimizga tashrif buyuring</h2>
+          <h2 className="contact-title">{t("contact_visit_us")}</h2>
           
           <div className="info-block">
-            <h3>Asosiy do'kon</h3>
-            <p>217 Tueri Junction, New York, NY 10002</p>
+            <h3>{t("contact_main_address")}</h3>
+            <p>{t("contact_address_text")}</p>
           </div>
 
           <div className="info-block">
-            <h3>2-manzil</h3>
-            <p>234 Park Avenue, Apt 5C New York, NY 10029</p>
+            <h3>{t("contact_work_hours")}</h3>
+            <p>{t("contact_hours_weekdays")}</p>
+            <p>{t("contact_hours_sunday")}</p>
           </div>
 
           <div className="info-block">
-            <h3>3-manzil</h3>
-            <p>350 5th Avenue New York, NY 10118</p>
-          </div>
-
-          <div className="info-block">
-            <h3>Ish vaqti</h3>
-            <p>Dush-Juma: 10:00 - 19:00</p>
+            <h3>{t("contact_get_in_touch")}</h3>
+            <p>{t("contact_phone")}</p>
+            <p>{t("contact_email_address")}</p>
           </div>
         </div>
 
@@ -72,22 +70,22 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="form-row">
               <div className="input-group">
-                <label>Ism *</label>
+                <label>{t("contact_label_fname")}</label>
                 <input 
                   type="text" 
                   name="firstName" 
-                  placeholder="Ismingiz" 
+                  placeholder={t("contact_placeholder_fname")} 
                   required 
                   value={formData.firstName}
                   onChange={handleChange}
                 />
               </div>
               <div className="input-group">
-                <label>Familiya *</label>
+                <label>{t("contact_label_lname")}</label>
                 <input 
                   type="text" 
                   name="lastName" 
-                  placeholder="Familiyangiz" 
+                  placeholder={t("contact_placeholder_lname")} 
                   required 
                   value={formData.lastName}
                   onChange={handleChange}
@@ -96,7 +94,7 @@ const Contact = () => {
             </div>
 
             <div className="input-group">
-              <label>Telefon *</label>
+              <label>{t("contact_label_phone")}</label>
               <input 
                 type="text" 
                 name="phone" 
@@ -105,11 +103,11 @@ const Contact = () => {
                 value={formData.phone}
                 onChange={handleChange}
               />
-              <small className="limit-hint">{formData.phone.length}/12</small>
+              <small className="limit-hint">{formData.phone.length}/13</small>
             </div>
 
             <div className="input-group">
-              <label>Email *</label>
+              <label>{t("contact_label_email")}</label>
               <input 
                 type="email" 
                 name="email" 
@@ -121,10 +119,10 @@ const Contact = () => {
             </div>
 
             <div className="input-group">
-              <label>Xabar *</label>
+              <label>{t("contact_label_message")}</label>
               <textarea 
                 name="message" 
-                placeholder="Xabaringizni yozing..." 
+                placeholder={t("contact_placeholder_message")} 
                 rows="5" 
                 required
                 value={formData.message}
@@ -132,21 +130,22 @@ const Contact = () => {
               ></textarea>
             </div>
 
-            <button type="submit" className="submit-btn">Yuborish</button>
+            <button type="submit" className="submit-btn">{t("contact_submit_btn")}</button>
           </form>
         </div>
       </div>
 
-      {/* Xarita qismi (Google Maps Iframe) */}
+      {/* Xarita qismi */}
       <div className="map-container" data-aos="zoom-in">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.422198947612!2d-73.985428!3d40.748817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1647862214321!5m2!1sen!2sus" 
+          src="https://maps.google.com/maps?q=Buxoro%20viloyati,%20Kogon%20tumani,%20B.Naqshband%20MFY,%20Kirakashxona%20ko'chasi%20107-uy&t=&z=15&ie=UTF8&iwloc=&output=embed" 
           width="100%" 
           height="450" 
-          style={{ border: 0 }} 
+          style={{ border: 0, borderRadius: "12px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)" }} 
           allowFullScreen="" 
           loading="lazy" 
-          title="Do'kon manzili"
+          referrerPolicy="no-referrer-when-downgrade"
+          title={t("contact_main_address")}
         ></iframe>
       </div>
     </section>

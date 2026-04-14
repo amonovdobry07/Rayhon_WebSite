@@ -30,10 +30,10 @@ const Footer = () => {
 
         {/* O'ng qism: Ijtimoiy tarmoqlar */}
         <div className="footer-socials">
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="social-icon">
+          <a href="https://www.instagram.com/rayxon_home_textile/" target="_blank" rel="noreferrer" className="social-icon">
             <FaInstagram />
           </a>
-          <a href="https://t.me/" target="_blank" rel="noreferrer" className="social-icon">
+          <a href="https://t.me/krovn2007" target="_blank" rel="noreferrer" className="social-icon">
             <FaTelegram />
           </a>
         </div>

@@ -1,27 +1,22 @@
 const translationFr = {
   home: "Accueil",
   products: "Produits",
-  marketplace: "Marché",
-  about: "À propos",
+  marketplace: "Boutiques en ligne",
+  about: "À Propos",
   contact: "Contact",
-  intro_text:
-    "Muminova Rayhon — une couturière talentueuse avec plus de vingt ans d'expérience. Elle crée des parures de lit et des collections de trousseau qui symbolisent le confort et l'élégance.",
-  about_p1:
-    "Chaque point incarne l'amour et la qualité. Rayhon ne travaille pas seulement le tissu, elle crée des chefs-d'œuvre qui définissent l'ambiance de votre chambre. Les ensembles en satin et coton de qualité supérieure durent des années.",
-  about_p2_part1: "Son style peut être décrit comme",
-  style_tag: "Élégance Classique et Confort Moderne",
-  about_p2_part2:
-    ". Une approche individuelle pour chaque commande, l'harmonie des couleurs et la précision des dimensions sont les principes de Muminova.",
-  order_btn: "Commander Maintenant",
+  
+  intro_text: "Muminova Rayhon est une couturière talentueuse qui a commencé son activité en 2025. Elle crée des ensembles de trousseaux et de literie qui sont le symbole du confort et de l'élégance pour votre maison.",
+  about_p1: "Chaque point de couture reflète l'amour et la qualité. Muminova Rayhon ne travaille pas seulement le tissu, elle crée des œuvres d'art qui définissent l'ambiance de votre chambre. Fabriqués à partir de satin, de coton et de matériaux haut de gamme, les ensembles conservent leur beauté pendant de nombreuses années.",
+  about_p2_part1: "Son style de travail peut être décrit comme",
+  style_tag: "L'élégance classique et le confort moderne",
+  about_p2_part2: ". Une approche personnalisée pour chaque commande, l'harmonie des couleurs et la précision des mesures sont les principes fondamentaux de Muminova. Nous confectionnons le confort de vos rêves.",
+  order_btn: "Commander maintenant",
   products_title: "Nos Produits",
 
-
-
-  
-  footer_desc:
-    "Muminova Rayhon — une couturière qualifiée avec 20 ans d'expérience. Des parures de lit et de trousseau de haute qualité pour le confort de votre maison.",
+  footer_desc: "Muminova Rayhon est une couturière qualifiée depuis 2025. Ensembles de literie et trousseaux de haute qualité pour le confort de votre maison.",
+  footer_address: "Adresse : Région de Boukhara, district de Kagan, MFY B. Naqshband, rue Kirakashxona, 107",
   footer_copy: "Tous droits réservés",
-  designed_by: "Conçu par:",
+  designed_by: "Conçu par :",
 
   products_catalog_title: "Catalogue de Produits",
   products_catalog_subtitle: "Choisissez votre type de tissu préféré",
@@ -30,64 +25,80 @@ const translationFr = {
   cat_super_satin: "Super Satin",
   cat_xb: "Coton",
   cat_stripe: "Rayé (Stripe)",
-  cat_havi: "Havi",
-  single_bed: "Lit simple :",
-  double_bed: "Lit double :",
-  currency: "soums",
-  not_available: "Indisponible",
-  no_products_in_category: "Il n'y a actuellement aucun produit dans cette catégorie.",
+  cat_havi: "Tissu Havi",
+  single_bed: "1 place :",
+  double_bed: "2 places :",
+  currency: "UZS",
+  not_available: "Rupture de stock",
+  no_products_in_category: "Aucun produit dans cette catégorie pour le moment.",
 
-  // -- Maxsulot Nomlari --
-  prod_1_title: "Parure en Bambou - Printemps",
+  prod_1_title: "Ensemble Bambou - Printemps",
   prod_2_title: "Super Satin - Premium",
-  prod_3_title: "Parure en Coton - Quotidien",
-  prod_4_title: "Satin Stripe - Style Hôtel",
-  prod_5_title: "Parure Havi - Confort",
-  prod_6_title: "Parure en Bambou - Brise d'été",
-  prod_7_title: "Parure en Coton - Classique",
+  prod_3_title: "Ensemble Coton - Quotidien",
+  prod_4_title: "Satin Rayé - Style Hôtel",
+  prod_5_title: "Ensemble Tissu Havi - Confort",
+  prod_6_title: "Ensemble Bambou - Brise d'été",
+  prod_7_title: "Ensemble Coton - Classique",
   prod_8_title: "Super Satin - Royal",
-  prod_9_title: "Parure Havi - Standard",
-  prod_10_title: "Satin Stripe - Grâce",
-  prod_11_title: "Parure en Bambou - Éco",
+  prod_9_title: "Ensemble Tissu Havi - Standard",
+  prod_10_title: "Satin Rayé - Élégance",
+  prod_11_title: "Ensemble Bambou - Éco",
   prod_12_title: "Super Satin - Élégance",
-  prod_13_title: "Parure Havi - Durable",
-  prod_14_title: "Parure en Coton - Minimaliste",
-  prod_15_title: "Satin Stripe - Luxe", 
+  prod_13_title: "Ensemble Tissu Havi - Durable",
+  prod_14_title: "Ensemble Coton - Minimaliste",
+  prod_15_title: "Satin Rayé - Luxe",
 
-
-
-
-  // -- Market Place sahifalari uchun --
   marketplace_title: "Nos Boutiques en Ligne",
   marketplace_subtitle: "Choisissez une plateforme pratique pour vos achats",
   back_to_shops: "Retour aux boutiques",
-  products_in_market: "Nos produits sur {{market}}",
+  products_in_market: "Nos produits sur {{market}}", 
   buy_via_market: "Acheter via {{market}}",
-  no_products_in_market: "Il n'y a actuellement aucun produit dans cette boutique.",
+  no_products_in_market: "Aucun produit n'a encore été ajouté à cette boutique.",
 
-  market_prod_xb: "Parure de lit en coton",
+  market_prod_xb: "Parure de lit en Coton",
   market_prod_satin: "Parure Premium Super Satin",
-  market_prod_havi_pillow: "Taies d'oreiller en tissu Havi",
-  market_prod_bamboo: "Coffret Cadeau en Bambou",
-  market_prod_stripe: "Satin Stripe Style Hôtel",
+  market_prod_havi_pillow: "Taies d'oreiller en Tissu Havi",
+  market_prod_bamboo: "Ensemble Trousseau en Bambou",
+  market_prod_stripe: "Satin Rayé Style Hôtel",
   market_prod_classic_blanket: "Couverture Double Classique", 
 
-
-  // -- À Propos de Nous --
   about_us_label: "À Propos de Nous",
-  about_us_title: "Symbole d'Élégance et de Confort",
-  about_us_desc1: "Muminova Rayhon est une couturière experte avec plus de vingt ans d'expérience. Elle crée des ensembles de trousseau et de literie qui apportent confort et élégance à votre maison.",
-  about_us_desc2: "Nous offrons une approche individuelle à chaque client. Nos parures de lit sont disponibles dans une variété de couleurs, de motifs et de tissus — du style minimaliste gris avec des motifs géométriques aux styles de créateurs plus vifs et éclatants. Notre objectif est de transformer votre chambre en un espace douillet et confortable.",
+  about_us_title: "L'incarnation de l'Élégance et du Confort",
+  about_us_desc1: "Muminova Rayhon est une couturière experte qui a lancé son activité en 2025. Elle crée des ensembles de trousseaux et de literie de haute qualité qui incarnent le confort et l'élégance pour votre maison.",
+  about_us_desc2: "Nous offrons une approche personnalisée à chaque client. Dans notre atelier situé au 107 rue Kirakashxona, MFY B. Naqshband, district de Kagan, région de Boukhara, nous fabriquons des parures de lit allant du style moderne et minimaliste à des motifs éclatants. Notre objectif principal est de transformer votre chambre en un espace douillet et confortable.",
   contact_us_btn: "Contactez-nous",
   
   service_1: "Ensembles de Trousseau",
   service_2: "Parures de Lit",
-  service_3: "Commandes Personnalisées",
-  service_4: "Ajustement sur Mesure",
-  service_5: "Tissus Premium (Satin, Coton, Soie)",
-  service_6: "Design de Chambre Douillet"
+  service_3: "Commandes sur Mesure",
+  service_4: "Ajustement des Tailles",
+  service_5: "Tissus Haut de Gamme (Satin, Coton, Soie)",
+  service_6: "Design de Chambre Confortable", 
 
-
+  // -- Contact Page --
+  contact_visit_us: "Visitez notre atelier",
+  contact_main_address: "Adresse Principale",
+  contact_address_text: "Région de Boukhara, district de Kagan, MFY B. Naqshband, rue Kirakashxona, 107",
+  contact_work_hours: "Heures d'ouverture",
+  contact_hours_weekdays: "Lundi - Samedi : 09:00 - 18:00",
+  contact_hours_sunday: "Dimanche : Fermé",
+  contact_get_in_touch: "Contactez-nous",
+  contact_phone: "Tél : +998 90 123 45 67",
+  contact_email_address: "Email : raykhon.textile@gmail.com",
+  contact_label_fname: "Prénom *",
+  contact_placeholder_fname: "Votre prénom",
+  contact_label_lname: "Nom de famille *",
+  contact_placeholder_lname: "Votre nom de famille",
+  contact_label_phone: "Téléphone *",
+  contact_label_email: "Email *",
+  contact_label_message: "Message *",
+  contact_placeholder_message: "Écrivez votre message...",
+  contact_submit_btn: "Envoyer",
+  contact_email_subject: "Nouveau message de contact de : ",
+  contact_form_name: "Nom",
+  contact_form_phone: "Téléphone",
+  contact_form_email: "Email",
+  contact_form_message_body: "Message",
 };
 
 export default translationFr;
