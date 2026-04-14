@@ -1,13 +1,220 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="uz">
   <head>
+    <!-- ========================= -->
+    <!-- CORE META -->
+    <!-- ========================= -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- UX / Mobile polish -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- ========================= -->
+    <!-- PRIMARY SEO TAGS — RAYXON HOME TEXTILE -->
+    <!-- ========================= -->
+    <title>
+      RAYXON home textile | Sarpa va yotoqxona jamlanmalarini tikish — buyurtma asosida
+    </title>
+
+    <meta
+      name="title"
+      content="RAYXON home textile | Sarpa va yotoqxona jamlanmalarini tikish — buyurtma asosida"
+    />
+    <meta
+      name="description"
+      content="RAYXON home textile — sarpa va yotoqxona jamlanmalarini tikish yo‘nalishida faoliyat yurituvchi brend. Sifatli mato, nafis dizayn, puxta tikuv va buyurtma asosida tayyorlanadigan uy tekstili mahsulotlari."
+    />
+    <meta
+      name="keywords"
+      content="rayxon home textile, rayxon textile, sarpa, yotoqxona jamlanmasi, uy tekstili, bedding set, bedroom textile, custom bedding, textile uzbekistan, kogon textile, buxoro uy tekstili, choyshab, ko‘rpa-to‘shak jamlanmasi"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="KHALIMOV | t.me/xusni_axi" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#8D6E63" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://rayxon.org.uz/" />
+
+    <!-- Language / Locale -->
+    <meta property="og:locale" content="uz_UZ" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- ========================= -->
+    <!-- OPEN GRAPH -->
+    <!-- ========================= -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="RAYXON home textile" />
+    <meta property="og:url" content="https://rayxon.org.uz/" />
+    <meta
+      property="og:title"
+      content="RAYXON home textile | Sarpa va yotoqxona jamlanmalari"
+    />
+    <meta
+      property="og:description"
+      content="Nafis va sifatli sarpa hamda yotoqxona jamlanmalari. Buyurtma asosida tikiladigan uy tekstili mahsulotlari."
+    />
+
+    <!-- PREVIEW IMAGE -->
+    <!-- TODO: PREVIEW IMG URL kiriting — masalan: https://rayxon.org.uz/images/preview.png -->
+    <meta property="og:image" content="./public/preview.png" />
+    <!-- TODO: tayyor bo‘lsa yoqing -->
+    <!-- <meta property="og:image:width" content="1200" /> -->
+    <!-- <meta property="og:image:height" content="630" /> -->
+
+    <!-- ========================= -->
+    <!-- TWITTER CARD -->
+    <!-- ========================= -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://rayxon.org.uz/" />
+    <meta
+      name="twitter:title"
+      content="RAYXON home textile | Sarpa va yotoqxona jamlanmalari"
+    />
+    <meta
+      name="twitter:description"
+      content="Uylar uchun nafis sarpa va yotoqxona jamlanmalari — sifatli tikuv va zamonaviy dizayn."
+    />
+    <!-- TODO: TWITTER PREVIEW IMAGE -->
+    <meta name="twitter:image" content="./public/preview.png" />
+
+    <!-- ========================= -->
+    <!-- ICONS -->
+    <!-- ========================= -->
+    <!-- TODO: LOGO/FAVICON URL kiriting — masalan:
+         https://rayxon.org.uz/images/favicon-32.png
+         https://rayxon.org.uz/images/apple-touch-icon.png
+    -->
+    <link rel="icon" type="image/png" href="./public/logo.png" />
+    <link rel="apple-touch-icon" href="./public/logo.png" />
+
+    <!-- Web App -->
+    <meta name="application-name" content="RAYXON home textile" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="RAYXON home textile" />
+
+    <!-- ========================= -->
+    <!-- PERFORMANCE HINTS -->
+    <!-- ========================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+
+    <!-- Optional font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ========================= -->
+    <!-- GEO HINTS -->
+    <!-- ========================= -->
+    <meta name="geo.region" content="UZ" />
+    <meta name="geo.placename" content="Buxoro, Kogon" />
+
+    <!-- ========================================================= -->
+    <!-- STRUCTURED DATA -->
+    <!-- ========================================================= -->
+
+    <!-- Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "RAYXON home textile",
+        "url": "https://rayxon.org.uz/",
+        "logo": "./public/logo.png",
+        "foundingDate": "2025",
+        "sameAs": [
+          "https://t.me/krovn2007",
+          "https://www.instagram.com/rayxon_home_textile/"
+        ]
+      }
+    </script>
+
+    <!-- WebSite -->
+    <!-- Eslatma: /search route bo‘lmasa, SearchAction’ni olib tashlang -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "RAYXON home textile",
+        "url": "https://rayxon.org.uz/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://rayxon.org.uz/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <!-- LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "RAYXON home textile",
+        "description": "Sarpa va yotoqxona jamlanmalarini tikish yo‘nalishida faoliyat yurituvchi uy tekstili brendi.",
+        "url": "https://rayxon.org.uz",
+        "logo": "./public/logo.png",
+        "image": "./public/preview.png",
+        "telephone": "",
+        "sameAs": [
+          "https://t.me/krovn2007",
+          "https://www.instagram.com/rayxon_home_textile/"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "UZ",
+          "addressRegion": "Buxoro viloyati",
+          "addressLocality": "Kogon tumani",
+          "streetAddress": "B. Naqshband MFY, Kirakashxona ko‘cha, 107-uy"
+        },
+        "openingHours": "Mo-Sa 09:00-19:00",
+        "priceRange": "$$",
+        "foundingDate": "2025",
+        "brand": {
+          "@type": "Brand",
+          "name": "RAYXON home textile"
+        }
+      }
+    </script>
+
+    <!-- Service -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Sarpa va yotoqxona jamlanmalarini tikish",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "RAYXON home textile",
+          "url": "https://rayxon.org.uz"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Uzbekistan"
+        },
+        "serviceType": [
+          "Sarpa tikish",
+          "Yotoqxona jamlanmalari",
+          "Uy tekstili",
+          "Buyurtma asosida tikish"
+        ]
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- Vite/React Entry -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
